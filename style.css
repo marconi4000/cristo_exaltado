@@ -24,7 +24,7 @@ header h1 {
 
 h3 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #f1c284;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -51,7 +51,7 @@ h3 {
 main .conteudo {
     background-color: #5d4037;
     /* Marrom mais claro */
-    padding: 30px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     max-width: auto;
@@ -198,7 +198,7 @@ main .conteudo ul li {
     color: #fcff31;
     border: 1px solid #fcff31;
     padding: 5px 10px;
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     cursor: pointer;
     border-radius: 4px;
 }
