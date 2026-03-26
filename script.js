@@ -97,46 +97,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Aumenta e diminui o tamanho da fonte do texto de estudo
 
-/*
+/* document.addEventListener('DOMContentLoaded', () => {
+    const btnAumentar = document.getElementById('fonteMais');
+    const btnDiminuir = document.getElementById('fonteMenos');
+    const areaTexto = document.getElementById('textoEstudo');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const btnAumentar = document.getElementById('fonteMais');
-  const btnDiminuir = document.getElementById('fonteMenos');
-  const areaTexto = document.getElementById('textoEstudo');
+    function ajustarFonte(valor) {
+        if (!areaTexto) {
+            console.error("Atenção Marconi: O ID 'textoEstudo' não foi encontrado no HTML.");
+            return;
+        }
 
-  /
-  function ajustarFonte(fator) {
-    if (!areaTexto) return;
+        // Seleciona TUDO: h1, h2, h3, p, li, e até o strong (números dos versículos)
+        const elementos = areaTexto.querySelectorAll('h1, h2, h3, p, li, strong, span');
 
-    // Seleciona todos os títulos e parágrafos dentro do seu artigo
-    const elementos = areaTexto.querySelectorAll('h2, p, strong');
+        elementos.forEach(el => {
+            const estilo = window.getComputedStyle(el).getPropertyValue('font-size');
+            const tamanhoAtual = parseFloat(estilo);
+            
+            // Aplica o novo tamanho
+            el.style.fontSize = (tamanhoAtual + valor) + 'px';
+        });
+    }
 
-    elementos.forEach(el => {
-      // Pega o tamanho real que o navegador está mostrando agora
-      const estilo = window.getComputedStyle(el).getPropertyValue('font-size');
-      const tamanhoAtual = parseFloat(estilo);
-      
-      // Aplica o novo tamanho diretamente no elemento
-      el.style.fontSize = (tamanhoAtual + fator) + 'px';
-    });
-  }
-/
-
-function ajustarFonte(fator) {
-  if (!areaTexto) return;
-
-  // Adicionamos h1, h2 e h3 na lista de busca
-  const elementos = areaTexto.querySelectorAll('h1, h2, h3, p, li, strong, span');
-
-  elementos.forEach(el => {
-    const estilo = window.getComputedStyle(el).getPropertyValue('font-size');
-    const tamanhoAtual = parseFloat(estilo);
-    el.style.fontSize = (tamanhoAtual + factor) + 'px';
-  });
-}
-
-  btnAumentar?.addEventListener('click', () => ajustarFonte(2));  // Aumenta de 2 em 2px
-  btnDiminuir?.addEventListener('click', () => ajustarFonte(-2)); // Diminui de 2 em 2px
+    // Vincula as funções aos botões
+    btnAumentar?.addEventListener('click', () => ajustarFonte(2));
+    btnDiminuir?.addEventListener('click', () => ajustarFonte(-2));
 });
 
 */
@@ -152,8 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Seleciona TUDO: h1, h2, h3, p, li, e até o strong (números dos versículos)
-        const elementos = areaTexto.querySelectorAll('h1, h2, h3, p, li, strong, span');
+        // AGORA INCLUI 'a' (âncoras/links) na lista de seleção
+        const elementos = areaTexto.querySelectorAll('h1, h2, h3, p, li, strong, span, a');
 
         elementos.forEach(el => {
             const estilo = window.getComputedStyle(el).getPropertyValue('font-size');
